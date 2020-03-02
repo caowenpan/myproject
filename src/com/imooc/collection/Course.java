@@ -23,12 +23,18 @@ public class Course {
         this.name = name;
     }
 
+    //含参构造器
     public Course(String id, String name) {
         this.id = id;
         this.name = name;
 
 
     }
+    //无参构造器
+    public  Course(){
+
+    };
+
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("Course{");

@@ -2,6 +2,7 @@ package com.imooc.collection;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -62,13 +63,64 @@ public class ListTest {
 
     }
 
+    /**
+     *
+     * 通过迭代器遍历list
+     */
+    public void testIterator(){
+        //通过iterator方法生成迭代器实例
+        Iterator iterator = coursesToSelect.iterator();
+        System.out.println("有如下课程可选（通过迭代器方法）：");
+        while (iterator.hasNext()){
+            Course cr = (Course) iterator.next();
+            System.out.println("课程： "+cr.getId()+":"+cr.getName());
+        }
+
+    }
+
+    /**\
+     * 测试list的set 方法修改集合元素
+     */
+    public void testModify(){
+        Course cr = new Course("5","高等数学");
+        coursesToSelect.set(0,cr);
+        testIterator();
+
+    }
+
+    /**
+     * 删除list元素
+     */
+    public void testRemove(){
+        Course cr = (Course) coursesToSelect.get(0);
+        System.out.println("我是课程："+cr.getId()+":"+ cr.getName()+",我即将被删除");
+        coursesToSelect.remove(3);
+        System.out.println("课程"+cr.getName()+"已被删除");
+        System.out.println("(Course)coursesToSelect.get(0)返回值为："+((Course)coursesToSelect.get(0)).getName());
+        testIterator();
+        Course[] courses = {(Course) coursesToSelect.get(0),(Course) coursesToSelect.get(2)};
+        coursesToSelect.removeAll(Arrays.asList(courses));
+        testIterator();
+
+
+    }
+
+
+
+
+
 
     public static void main(String[] args) {
         ListTest lt = new ListTest();
         lt.testAdd();
         lt.testGet();
+        lt.testIterator();
+        lt.testModify();
+        lt.testIterator();
+        lt.testRemove();
 
     }
+
 
 
 }
