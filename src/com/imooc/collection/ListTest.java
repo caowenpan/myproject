@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class ListTest {
     //用于存放备选课程的List
-    public List coursesToSelect;
+    private List coursesToSelect;
 
     public ListTest() {
         this.coursesToSelect = new ArrayList<>();
