@@ -50,7 +50,13 @@ public class TestGeneric {
 
     }
 
+    public List<Course> getCourses() {
+        return courses;
+    }
 
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
 
     public static void main(String[] args) {
         TestGeneric testGeneric = new TestGeneric();
