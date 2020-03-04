@@ -1,9 +1,6 @@
 package com.imooc.collection;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IT000289 on 2020/3/3.
@@ -46,7 +43,7 @@ public class MapTest {
 
 
     /**
-     * 测试keySet方法，遍历Map元素
+     * 测试map的keySet方法，返回一个keySet,遍历keySet
      */
     public void testKeySet() {
         Set<String> studentKeySet = studentMap.keySet();
@@ -60,9 +57,26 @@ public class MapTest {
 
     }
 
+    /**
+     *测试map的values方法，返回一个Collection,遍历Collection
+     */
+    public void testValue(){
+        Collection<Student> studentCollection = studentMap.values();
+
+        for (Student student:studentCollection
+             ) {
+            if(student!=null)
+            System.out.println(student.getId()+""+student.getName());
+        }
+
+    }
+
+
+
     public static void main(String[] args) {
         MapTest mapTest = new MapTest();
         mapTest.testPut();
-        mapTest.testKeySet();
+       // mapTest.testKeySet();
+        mapTest.testValue();
     }
 }
