@@ -66,7 +66,7 @@ public class MapTest {
         for (Student student:studentCollection
              ) {
             if(student!=null)
-            System.out.println(student.getId()+""+student.getName());
+            System.out.println("学生" + "ID:" + student.getId() + " " + "姓名:" + student.getName());
         }
 
     }
