@@ -75,10 +75,9 @@ public class MapTest {
      * 测试remove方法
      */
     public void testRemove(){
-
+        Scanner scanner = new Scanner(System.in);
         while (true){
             System.out.println("请输入一个待删除学生的ID");
-            Scanner scanner = new Scanner(System.in);
             String stuID = scanner.next();
             Student student = studentMap.get(stuID);
             if(student == null){
@@ -102,6 +101,30 @@ public class MapTest {
 
     }
 
+    /**
+     * 通过put方法修改map
+     */
+    public void testModify(){
+        Scanner scanner = new Scanner(System.in);
+        while(true){
+            System.out.println("请输入要修改学生的ID");
+            String stuID = scanner.next();
+            Student student = studentMap.get(stuID);
+            if(student == null){
+                System.out.println("该学生ID不存在");
+            }else
+            {
+                System.out.println("当前学生姓名为："+student.getName());
+                System.out.println("请输入新的学生姓名");
+                String stuName = scanner.next();
+                Student newStudent = new Student(stuID,stuName);
+                studentMap.put(stuID,newStudent);
+                break;
+            }
+
+        }
+
+    }
 
 
     public static void main(String[] args) {
@@ -109,7 +132,9 @@ public class MapTest {
         mapTest.testPut();
        // mapTest.testKeySet();
         mapTest.testValue();
-        mapTest.testRemove();;
+//        mapTest.testRemove();
+//        mapTest.testEntrySet();
+        mapTest.testModify();
         mapTest.testEntrySet();
     }
 }
