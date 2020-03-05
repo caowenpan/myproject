@@ -45,4 +45,46 @@ public class Course {
         sb.append('}');
         return sb.toString();
     }
+
+    /**
+     *重写equals方法，通过课程名称比较课程是否相同，
+     * @param obj
+     * @return
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj){
+            return  true;
+        }
+        if(obj == null){
+            return  false;
+        }
+        if(!(obj instanceof Course)){
+            return  false;
+        }
+        Course course = (Course) obj;
+        if(this.getName()==null){
+            if(course.getName() == null){
+                return  true;
+            }else {
+                return  false;
+            }
+        }else {
+            if(this.getName().equals(course.getName())){
+                return  true;
+            }else {
+                return false;
+            }
+        }
+
+
+    }
+    /**
+     *重写hashCode方法，通过课程名称比较课程是否相同，
+     * @return
+     */
+    @Override
+    public int hashCode() {
+        return name != null ? name.hashCode() : 0;
+    }
 }
