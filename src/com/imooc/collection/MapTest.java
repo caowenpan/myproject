@@ -71,6 +71,37 @@ public class MapTest {
 
     }
 
+    /**
+     * 测试remove方法
+     */
+    public void testRemove(){
+
+        while (true){
+            System.out.println("请输入一个待删除学生的ID");
+            Scanner scanner = new Scanner(System.in);
+            String stuID = scanner.next();
+            Student student = studentMap.get(stuID);
+            if(student == null){
+                System.out.println("该学生ID不存在");
+            }else {
+                studentMap.remove(stuID);
+                break;
+            }
+        }
+    }
+
+    /**
+     *  测试entrySet方法,返回Entry键值对集合
+     */
+    public void testEntrySet(){
+        Set<Map.Entry<String,Student>> entrySet = studentMap.entrySet();
+        for (Map.Entry<String,Student> entry :entrySet
+             ) {
+            System.out.println("学生ID："+entry.getKey()+" "+"学生姓名："+entry.getValue().getName());
+        }
+
+    }
+
 
 
     public static void main(String[] args) {
@@ -78,5 +109,7 @@ public class MapTest {
         mapTest.testPut();
        // mapTest.testKeySet();
         mapTest.testValue();
+        mapTest.testRemove();;
+        mapTest.testEntrySet();
     }
 }
