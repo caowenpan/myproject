@@ -33,7 +33,7 @@ public class Course {
     //无参构造器
     public  Course(){
 
-    };
+    }
 
     @Override
     public String toString() {
@@ -45,6 +45,7 @@ public class Course {
         sb.append('}');
         return sb.toString();
     }
+
 
     /**
      *重写equals方法，通过课程名称比较课程是否相同，

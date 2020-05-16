@@ -10,7 +10,7 @@ import java.util.Random;
  * Created by IT000289 on 2020/3/6.
  */
 public class CollectionsTest {
-    public CollectionsTest(){};
+
 
     /**
      * 通过Collections的sort方法对String泛型的List进行排序
